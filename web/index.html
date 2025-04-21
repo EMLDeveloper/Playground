@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Portfolio Hero</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.2/dist/core.js"></script>
+  </head>
+  <body>
+    <!-- Background Layers - now above everything for full-page effect -->
+    <div class="gradient-bg"></div>
+    <svg class="pattern-bg" aria-hidden="true">
+      <defs>
+        <pattern
+          id="grid-pattern"
+          width="80"
+          height="80"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0.5 80V0.5H80" fill="none" stroke="#ffffff10" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+    </svg>
+    <div class="stars" id="stars"></div>
+    <div id="meteors"></div>
+    <div id="meteor-container"></div>
+
+    <nav class="navbar">
+      <button class="nav-btn left">
+        <i class="fa-solid fa-clock"></i><span id="current-time">Inicio</span>
+      </button>
+      <button class="nav-btn center"> <i class="fa-brands fa-github"></i> Github</button>
+      <button class="nav-btn right"> <i class="fa-solid fa-house"></i>Main Portfolio</button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1><span id="typewriter"></span></h1>
+        <p>Small Fun projects. Powerful ideas.</p>
+        <img class="profile-pic" src="img/profile.png" alt="" />
+      </div>
+    </section>
+
+    <!-- Background Layers - sin contenedor .hero -->
+    <div class="gradient-bg"></div>
+    <svg class="pattern-bg" aria-hidden="true">
+      <defs>
+        <pattern
+          id="grid-pattern"
+          width="80"
+          height="80"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0.5 80V0.5H80" fill="none" stroke="#ffffff10" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+    </svg>
+    <div class="stars" id="stars"></div>
+    <div id="meteors"></div>
+    <div id="meteor-container"></div>
+
+    <!-- Contenido principal -->
+    <main class="main-content" id="projects-container">
+      <!-- <div class="project-card tilt-card">
+        <h3>Portfolio Web</h3>
+        <p>Landing moderna con HTML, CSS y JS.</p>
+        <p>Animaciones suaves, diseño responsive y estilo Midudev.</p>
+        <p>Incluye efecto 3D hover dinámico con JS.</p>
+      </div>
+      <div class="project-card tilt-card">
+        <h3>Portfolio Web</h3>
+        <p>Landing moderna con HTML, CSS y JS.</p>
+        <p>Animaciones suaves, diseño responsive y estilo Midudev.</p>
+        <p>Incluye efecto 3D hover dinámico con JS.</p>
+      </div>
+      <div class="project-card tilt-card">
+        <h3>Portfolio Web</h3>
+        <p>Landing moderna con HTML, CSS y JS.</p>
+        <p>Animaciones suaves, diseño responsive y estilo Midudev.</p>
+        <p>Incluye efecto 3D hover dinámico con JS.</p>
+      </div> -->
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

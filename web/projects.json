@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Guess a Number",
+    "description": "A simple game where you try to guess a randomly chosen number. Get hints until you find the answer.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "image": "img/guess.png",
+    "codeLink": "https://github.com/tuusuario/portfolio-web",
+    "demoLink": "https://tuusuario.github.io/portfolio-web"
+  },
+  {
+    "title": "Dice Game",
+    "description": "The Dice Game is a two-player game where players take turns rolling a dice. If a player rolls a 1, they lose their turn.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "image": "img/DICE.png",
+    "codeLink": "https://github.com/tuusuario/portfolio-web",
+    "demoLink": "https://tuusuario.github.io/portfolio-web"
+  }
+]

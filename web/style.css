@@ -1,0 +1,595 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: #020617;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  body {
+    margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+  }
+  .main-content {
+    max-width: 98vw;
+    padding: 7rem 0.5rem 3rem 0.5rem; /* More top padding for navbar */
+    gap: 1.5rem;
+  }
+  .profile-pic {
+    width: 220px;
+    height: 160px;
+  }
+  .project-card {
+    max-width: 90vw;
+    padding: 1rem;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  .nav-center {
+    position: static;
+    transform: none;
+    top: 0;
+    left: 0;
+    margin-bottom: 0.5rem;
+  }
+  .nav-btn {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0.5rem 0.1rem 0.5rem 0.1rem;
+  }
+  .main-content {
+    padding: 6rem 0.1rem 2rem 0.1rem; /* More top padding for mobile navbar */
+    gap: 1rem;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 90px;
+  }
+  .project-card {
+    max-width: 98vw;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .nav-btn {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  .nav-center h1 {
+    font-size: 1.2rem;
+  }
+  .nav-center p {
+    font-size: 1rem;
+  }
+}
+
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #020617; /* Fully solid background */
+  color: white;
+  z-index: 9999;
+  box-shadow: 0 2px 16px #00000040;
+}
+
+/* Botones a la izquierda y derecha */
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid white;
+  padding: 1rem 3rem; /* Botones más grandes */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 0.5rem; /* Centramos más los botones */
+  margin-left: 5rem;
+  margin-right: 5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn i {
+  font-size: 2em;
+  padding-right: 0.7em;
+  padding-left: 0.1em;
+  line-height: 1;
+  vertical-align: baseline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn:hover {
+  background: white;
+  color: #0b217d;
+}
+
+/* Centro del Navbar */
+.hero {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 45vh;
+  margin-top: 5rem; /* Space for navbar */
+  margin-bottom: 0.5rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  color: #ececec;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 30vh;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 20vh;
+    margin-top: 4.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero-content h1 {
+    font-size: 1.3rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+
+.nav-center p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* HERO BASE */
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem auto; /* Slightly less space below */
+  padding: 7.5rem 2rem 4rem 2rem; /* Less top/bottom padding */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Asegura que las cards estén centradas */
+  gap: 2rem; /* Espaciado entre las cards */
+  text-align: center;
+  border-bottom: 1px solid #3b82f6;
+  /* overflow: hidden;  Remove to allow content to be visible */
+  z-index: 1; /* Keep z-index low so navbar is always above */
+}
+
+/* Imagen de perfil rectangular con bordes redondeados */
+.profile-pic {
+  width: 400px;
+  height: 300px; /* Rectangular */
+  border-radius: 15px; /* Bordes redondeados */
+  object-fit: cover;
+}
+
+/* Gradient Background */
+.gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(120, 119, 198, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: -3;
+  pointer-events: none;
+}
+
+/* Pattern Background */
+.pattern-bg {
+  position: absolute;
+  top: -1rem;
+  height: 80%;
+  width: 100%;
+  transform: skewY(12deg);
+  z-index: -2;
+  fill: rgba(255, 255, 255, 0.06);
+  stroke: rgba(255, 255, 255, 0.06);
+  mask-image: linear-gradient(to bottom right, white, transparent, transparent);
+  pointer-events: none;
+}
+
+/* Stars */
+.stars div {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Meteors */
+.meteor {
+  position: absolute;
+  height: 4px;
+  width: 200px;
+  background: linear-gradient(90deg, #def2ff, transparent);
+  transform: rotate(-45deg);
+  opacity: 0.9;
+  animation: fall 120s linear forwards;
+  border-radius: 9999px;
+  filter: drop-shadow(0 0 6px #def2ff);
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-200px, 700px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-card {
+    max-width: 95vw;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    max-width: 99vw;
+    padding: 0.7rem;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    max-width: 100vw;
+    padding: 0.4rem;
+    font-size: 0.95rem;
+    margin: 0.5rem auto;
+  }
+}
+
+
+.tilt-card {
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+/* El efecto cuando el ratón pasa sobre la tarjeta */
+.tilt-card:hover {
+  transform: rotateY(20deg) rotateX(20deg) scale(1.05) translateZ(50px); /* Movimiento más agresivo */
+  box-shadow: 0 12px 40px rgba(96, 165, 250, 0.3);
+}
+
+/* Contenedor principal de las tarjetas */
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  padding: 3rem 1rem 5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap; /* Esto hace que las tarjetas se acomoden mejor en pantallas pequeñas */
+  gap: 2rem; /* Añadimos espacio entre las tarjetas */
+  z-index: 1;
+  margin-top: -12rem;
+} 
+
+/* Estilo de las tarjetas */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 4px 20px rgba(96, 165, 250, 0.1);
+  backdrop-filter: blur(6px);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 380px;
+  max-width: 450px;
+  min-height: 350px; /* Aseguramos que las tarjetas tengan una altura mínima */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 1.5rem 2rem 1.5rem;
+}
+
+.project-card img {
+  width: 100%;
+  max-width: 450px;
+  min-height: 220px;
+  height: auto;
+  margin-bottom: 1.2rem;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(96, 165, 250, 0.12);
+}
+
+.tech-list {
+  margin-bottom: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: 0.25em 0.8em;
+  border-radius: 999px;
+  font-size: 0.97em;
+  font-weight: bold;
+  color: white;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  background: #fff; /* fallback, will be overridden */
+  opacity: 1;
+  transition: background 0.2s, color 0.2s;
+}
+.tech-HTML { background: #ff9800; }
+.tech-CSS { background: #2563eb; }
+.tech-JavaScript { background: #facc15; color: #222; }
+
+.tech-HTML:hover { background: #e65100; }
+.tech-CSS:hover { background: #1e40af; }
+.tech-JavaScript:hover { background: #eab308; color: #222; }
+.tech-HTML { background: #ff9800; }
+.tech-CSS { background: #2563eb; }
+.tech-JavaScript { background: #facc15; color: #222; }
+
+
+/* Efecto 3D cuando se pasa el ratón */
+.tilt-card {
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+/* Fondo de gradiente animado */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  background-size: 200% 200%;
+  background-blend-mode: multiply;
+  animation: animateGradient 10s infinite alternate linear;
+  z-index: -1; /* Colocamos el fondo detrás del contenido */
+}
+
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Estilo de los textos dentro de la tarjeta */
+.project-card h3 {
+  font-size: 1.3rem;
+  color: #93c5fd;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Ajustes para tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .profile-pic {
+    width: 300px;
+    height: 225px;
+  }
+
+  .nav-center h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-center p {
+    font-size: 1rem;
+  }
+
+  .nav-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    top: 20px;
+  }
+
+  .nav-btn {
+    width: 90%;
+    margin: 0.5rem 0;
+  }
+
+  .nav-center {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+
+  .profile-pic {
+    width: 90%;
+    height: auto;
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  .project-card {
+    width: 90%;
+    max-width: none;
+    margin: 1rem auto;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .nav-center h1 {
+    font-size: 1.2rem;
+  }
+
+  .nav-center p {
+    font-size: 0.9rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
+.project-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #0f172a;
+  color: #93c5fd;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 5px #00000040;
+}
+.project-card {
+  position: relative; /* asegúrate de que esto esté para que funcione el position:absolute de .project-number */
+}
+
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-link {
+  padding: 0.7rem 1.5rem;
+  background: #1e3a8a;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-size: 1.15rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.btn-link:hover {
+  background: #3b82f6;
+}
+
+.btn-link i {
+  font-size: 1.4em;
+  vertical-align: middle;
+}
